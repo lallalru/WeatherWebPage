@@ -8,19 +8,17 @@ class City extends React.Component {
     cities: []
   };
 
-  componentDidMount() {
-    console.log(this.state.cities);
-
-    const cities = fetch(API_CITIES)
+  async componentDidMount() {
+    const cities = await fetch(API_CITIES)
       .then(res => res.json())
-      .then(data => {
-        this.setState({
-          cities: data
-        });
-      });
+      .then(data => data);
 
-    // Can't use data as sync
+    // Now I can use data as sync!
     console.warn('FETCHED CITIES', cities);
+
+    this.setState({
+      cities
+    });
   }
 
   render() {
