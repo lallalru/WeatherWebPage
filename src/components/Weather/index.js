@@ -18,7 +18,7 @@ class Weather extends React.Component {
       .then(data => data);
 
     // Now I can use data as sync!
-    console.warn('FETCHED CITIES', cities);
+    // console.warn('FETCHED CITIES', cities);
 
     this.setState({
       cities
