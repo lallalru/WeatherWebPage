@@ -4,7 +4,7 @@ import Header from './Header';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import About from './components/About';
-import Topics from './components/Topics';
+import City from './components/City';
 
 const RouterApp = () => {
   const city = 'Daejeon';
@@ -16,7 +16,7 @@ const RouterApp = () => {
 
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
-      <Route path="/topics" component={Topics} />
+      <Route path="/city" component={City} />
     </div>
   );
 };
