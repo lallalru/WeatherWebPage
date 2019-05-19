@@ -15,7 +15,7 @@ class TodayWeather extends React.Component {
 
     const weather = await fetch(api)
       .then(res => res.json())
-      .then(data => data.weather[0]);
+      .then(data => data);
 
     this.setState({
       weather
@@ -30,16 +30,22 @@ class TodayWeather extends React.Component {
       return <div>Loading...</div>;
     }
 
-    return (
-      <>
-        <h2>{cityId}</h2>
-        <div>{JSON.stringify(weather)}</div>
+    const celsius = (weather.main.temp - 273.15).toFixed(2); // kelvin to celsius
+    const weatherMain = weather.weather[0].main;
+    const iconId = weather.weather[0].id;
 
-        <h3 className="weather-main">{weather.main}</h3>
-        <div className="weather-image">
-          <Icon iconId={weather.id} />
+    return (
+      <div className="weather-today">
+        <h2 className="weather-city">{cityId}</h2>
+
+        <div className="weather-today-meta">
+          <h3 className="weather-main">{weatherMain}</h3>
+          <div className="weather-temp">{celsius}°</div>
         </div>
-      </>
+        <div className="weather-image">
+          <Icon iconId={iconId} />
+        </div>
+      </div>
     );
   }
 }

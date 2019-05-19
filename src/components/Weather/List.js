@@ -8,13 +8,16 @@ const List = props => {
   const { url } = match;
 
   return (
-    <ul>
-      {cities.map(item => (
-        <li key={item}>
-          <Link to={`${url}/${item}`}>{item}</Link>
-        </li>
-      ))}
-    </ul>
+    <div className="weather-list">
+      <p>Choose your city:</p>
+      <ul className="weather-cities">
+        {cities.map(item => (
+          <li key={item}>
+            <Link to={`${url}/${item}`}>{item}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
