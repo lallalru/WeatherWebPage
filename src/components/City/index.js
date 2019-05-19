@@ -1,4 +1,5 @@
 import React from 'react';
+import List from './List';
 
 const API_CITIES = 'http://demo6468405.mockable.io/weather-crawlers/cities';
 // const API_WEATHER = 'http://demo6468405.mockable.io/weather-crawlers/current-weathers/by-city-name/Daejeon';
@@ -22,14 +23,12 @@ class City extends React.Component {
   }
 
   render() {
+    const { cities } = this.state;
+
     return (
       <div>
         <h1>Cities</h1>
-        <p>City list</p>
-        <div>{this.state.cities.join(' ')}</div>
-        <div>
-          API : <a href={API_CITIES}>{API_CITIES}</a>
-        </div>
+        <List cities={cities} />
       </div>
     );
   }
