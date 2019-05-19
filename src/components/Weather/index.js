@@ -1,10 +1,13 @@
 import React from 'react';
+import { Switch, Route, withRouter } from 'react-router';
+
 import List from './List';
+import TodayWeather from './TodayWeather';
 
 const API_CITIES = 'http://demo6468405.mockable.io/weather-crawlers/cities';
 // const API_WEATHER = 'http://demo6468405.mockable.io/weather-crawlers/current-weathers/by-city-name/Daejeon';
 
-class City extends React.Component {
+class Weather extends React.Component {
   state = {
     cities: []
   };
@@ -23,15 +26,20 @@ class City extends React.Component {
   }
 
   render() {
+    const { match } = this.props;
     const { cities } = this.state;
 
     return (
       <div>
-        <h1>Cities</h1>
-        <List cities={cities} />
+        <h1>Weather</h1>
+
+        <Switch>
+          <Route path={`${match.path}/:cityId`} component={TodayWeather} />
+          <Route exact path={match.path} render={() => <List cities={cities} />} />
+        </Switch>
       </div>
     );
   }
 }
 
-export default City;
+export default withRouter(Weather);
