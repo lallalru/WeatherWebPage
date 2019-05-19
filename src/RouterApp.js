@@ -11,7 +11,7 @@ const RouterApp = () => {
 
   return (
     <div>
-      <Header city={city} />
+      {/* <Header city={city} /> */}
       <Navigation />
 
       <Switch>
