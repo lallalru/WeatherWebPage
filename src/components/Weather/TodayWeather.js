@@ -35,8 +35,9 @@ class TodayWeather extends React.Component {
         <h2>{cityId}</h2>
         <div>{JSON.stringify(weather)}</div>
 
+        <h3 className="weather-main">{weather.main}</h3>
         <div className="weather-image">
-          <Icon iconId={weather.icon} />
+          <Icon iconId={weather.id} />
         </div>
       </>
     );

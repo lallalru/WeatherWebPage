@@ -3,6 +3,7 @@ import { Switch, Route, withRouter } from 'react-router';
 
 import List from './List';
 import TodayWeather from './TodayWeather';
+import './weather.css';
 
 const API_CITIES = 'http://demo6468405.mockable.io/weather-crawlers/cities';
 // const API_WEATHER = 'http://demo6468405.mockable.io/weather-crawlers/current-weathers/by-city-name/Daejeon';
