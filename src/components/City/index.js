@@ -18,13 +18,19 @@ class City extends React.Component {
 
   componentDidMount() {
     console.log(this.state.city);
+
+    setTimeout(() => {
+      this.setState({
+        city: 'DDDDDD'
+      });
+    }, 2000);
   }
 
   render() {
     return (
       <div>
         <h1>Cities</h1>
-        <p>City list</p>
+        <p>City list : current city = {this.state.city}</p>
         <div>
           API : <a href={API_CITIES}>{API_CITIES}</a>
         </div>
