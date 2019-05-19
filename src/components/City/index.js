@@ -1,36 +1,34 @@
 import React from 'react';
 
 const API_CITIES = 'http://demo6468405.mockable.io/weather-crawlers/cities';
-const API_WEATHER = 'http://demo6468405.mockable.io/weather-crawlers/current-weathers/by-city-name/Daejeon';
+// const API_WEATHER = 'http://demo6468405.mockable.io/weather-crawlers/current-weathers/by-city-name/Daejeon';
 
 class City extends React.Component {
   state = {
-    city: 'hello'
+    cities: []
   };
 
-  constructor(props) {
-    super(props);
-    console.log(this.state.city);
-    this.state = {
-      city: 'asd'
-    };
-  }
-
   componentDidMount() {
-    console.log(this.state.city);
+    console.log(this.state.cities);
 
-    setTimeout(() => {
-      this.setState({
-        city: 'DDDDDD'
+    const cities = fetch(API_CITIES)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          cities: data
+        });
       });
-    }, 2000);
+
+    // Can't use data as sync
+    console.warn('FETCHED CITIES', cities);
   }
 
   render() {
     return (
       <div>
         <h1>Cities</h1>
-        <p>City list : current city = {this.state.city}</p>
+        <p>City list</p>
+        <div>{this.state.cities.join(' ')}</div>
         <div>
           API : <a href={API_CITIES}>{API_CITIES}</a>
         </div>
