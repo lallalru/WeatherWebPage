@@ -1,10 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 
-function Header() {
+function Header(props) {
+  console.log(props);
+
+  const city = props.city;
+
+  console.log(city);
+
   return (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
+
+      <div />
+
       <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>

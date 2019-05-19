@@ -3,9 +3,11 @@ import Header from './Header';
 import './App.css';
 
 function App() {
+  const city = 'Daejeon';
+
   return (
     <div className="App">
-      <Header />
+      <Header city={city} />
     </div>
   );
 }
