@@ -1,0 +1,16 @@
+.navigation {  
+}
+
+.navigation li {
+  display: inline-block;
+  margin: 0 1em;
+}
+.navigation a {
+  text-decoration: none;  
+  color: #10688c;
+}
+.navigation a.selected {
+  font-weight: bold; 
+  color: #1cc75b;
+  border-bottom: 1px solid #1cc75b;
+}

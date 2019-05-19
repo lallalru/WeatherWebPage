@@ -1,15 +1,14 @@
 import React from 'react';
-import Header from './Header';
+import { BrowserRouter } from 'react-router-dom';
+import RouterApp from './RouterApp';
 import './App.css';
 
-function App() {
-  const city = 'Daejeon';
-
+const App = () => {
   return (
-    <div className="App">
-      <Header city={city} />
-    </div>
+    <BrowserRouter>
+      <RouterApp />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
