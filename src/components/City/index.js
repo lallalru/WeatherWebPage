@@ -3,8 +3,23 @@ import React from 'react';
 const API_CITIES = 'http://demo6468405.mockable.io/weather-crawlers/cities';
 const API_WEATHER = 'http://demo6468405.mockable.io/weather-crawlers/current-weathers/by-city-name/Daejeon';
 
-// Stateless component
 class City extends React.Component {
+  state = {
+    city: 'hello'
+  };
+
+  constructor(props) {
+    super(props);
+    console.log(this.state.city);
+    this.state = {
+      city: 'asd'
+    };
+  }
+
+  componentDidMount() {
+    console.log(this.state.city);
+  }
+
   render() {
     return (
       <div>
