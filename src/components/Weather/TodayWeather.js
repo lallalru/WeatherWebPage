@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const API_WEATHER = 'http://demo6468405.mockable.io/weather-crawlers/current-weathers/by-city-name';
+const API_WEATHER = 'http://localhost:8080/weather-crawler/current-weathers/by-city-name';
 
 class TodayWeather extends React.Component {
   state = {
@@ -9,8 +9,7 @@ class TodayWeather extends React.Component {
   };
 
   async componentDidMount() {
-    // const { cityId } = this.props.match.params;
-    const cityId = 'Daejeon';
+    const { cityId } = this.props.match.params;
     const api = `${API_WEATHER}/${cityId}`;
 
     const weather = await fetch(api)
@@ -36,11 +35,11 @@ class TodayWeather extends React.Component {
 
     return (
       <div className="weather-today">
-        <h2 className="weather-city">{cityId}</h2>
+        <h2 className="weather-city">{cityId}은(는) 지금</h2>
 
         <div className="weather-today-meta">
-          <h3 className="weather-main">{weatherMain}</h3>
-          <div className="weather-temp">{celsius}°</div>
+          <h3 className="weather-main">날씨는 {weatherMain} 입니다.</h3>
+          <div className="weather-temp">{celsius}° 이고&nbsp;&nbsp;</div>
         </div>
         <div className="weather-image">
           <Icon iconId={iconId} />

@@ -9,7 +9,7 @@ const List = props => {
 
   return (
     <div className="weather-list">
-      <p>Choose your city:</p>
+      <p> - 도시를 골라주세요! - </p>
       <ul className="weather-cities">
         {cities.map(item => (
           <li key={item}>
